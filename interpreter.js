@@ -39,12 +39,7 @@ class Interpreter {
   }
 
   formatResult(resultValue) {
-    const floatResult = parseFloat(resultValue.toFixed(4));
-    const stringResult = floatResult.toString();
-    const stringResultFormat = stringResult
-      .substring(0, stringResult.length - 1);
-
-    return parseFloat(stringResultFormat);
+    return parseFloat(parseFloat(resultValue).toFixed(4));
   }
 
   replaceFormula(value) {
